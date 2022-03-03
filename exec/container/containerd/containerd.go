@@ -91,6 +91,7 @@ func NewClient(endpoint, namespace string) (*Client, error) {
 	if namespace == "" {
 		namespace = DefaultContainerdNS
 	}
+	fmt.Sprintf("ruaruaruauraura00000000000")
 	gopts := []grpc.DialOption{
 		grpc.WithInsecure(),
 	}
@@ -330,16 +331,19 @@ func (c *Client) ExecuteAndRemove(config *containertype.Config, hostConfig *cont
 			networkNsPath = nsInfo.Path
 		}
 	}
+	fmt.Sprintf("ruaruaruauraura1111111111")
 	if networkNsPath == "" {
 		return "", "", fmt.Errorf(spec.CreateContainerFailed.Sprintf("target container network namespace path is nil")), spec.CreateContainerFailed.Code
 	}
 
 	// 2. pull image befor create container
 	if _, err := c.cclient.Pull(c.Ctx, config.Image, containerd.WithPullUnpack, containerd.WithPullSnapshotter(snapshotter)); err != nil {
+		fmt.Sprintf("ruaruaruauraura2222222222")
 		return "", "", fmt.Errorf(spec.ImagePullFailed.Sprintf(config.Image, err.Error())), spec.ImagePullFailed.Code
 	}
-
+	fmt.Sprintf("ruaruaruauraura333333333333333")
 	images, err := c.cclient.GetImage(c.Ctx, config.Image)
+	fmt.Sprintf("ruaruaruauraura44444444444444")
 	if err != nil {
 		return "", "", fmt.Errorf(spec.ImagePullFailed.Sprintf(config.Image, fmt.Sprintf("Get image failed, %s", err.Error()))), spec.ImagePullFailed.Code
 	}
