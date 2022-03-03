@@ -91,6 +91,8 @@ func NewClient(endpoint, namespace string) (*Client, error) {
 	if namespace == "" {
 		namespace = DefaultContainerdNS
 	}
+	util.Errorf("11111111", util.GetRunFuncName(), fmt.Sprintf("ruaruaruauraura00000000000"))
+	fmt.Sprintf("ruaruaruauraura00000000000")
 	logrus.Infof("ruaruaruauraura00000000000")
 	gopts := []grpc.DialOption{
 		grpc.WithInsecure(),
@@ -331,6 +333,8 @@ func (c *Client) ExecuteAndRemove(config *containertype.Config, hostConfig *cont
 			networkNsPath = nsInfo.Path
 		}
 	}
+	util.Errorf("11111111", util.GetRunFuncName(), fmt.Sprintf("ruaruaruauraura1111111111"))
+	fmt.Sprintf("ruaruaruauraura1111111111")
 	logrus.Infof("ruaruaruauraura1111111111")
 	if networkNsPath == "" {
 		return "", "", fmt.Errorf(spec.CreateContainerFailed.Sprintf("target container network namespace path is nil")), spec.CreateContainerFailed.Code
@@ -338,11 +342,17 @@ func (c *Client) ExecuteAndRemove(config *containertype.Config, hostConfig *cont
 
 	// 2. pull image befor create container
 	if _, err := c.cclient.Pull(c.Ctx, config.Image, containerd.WithPullUnpack, containerd.WithPullSnapshotter(snapshotter)); err != nil {
+		util.Errorf("11111111", util.GetRunFuncName(), fmt.Sprintf("ruaruaruauraura2222222222"))
+		fmt.Sprintf("ruaruaruauraura2222222222")
 		logrus.Infof("ruaruaruauraura2222222222")
 		return "", "", fmt.Errorf(spec.ImagePullFailed.Sprintf(config.Image, err.Error())), spec.ImagePullFailed.Code
 	}
+	util.Errorf("11111111", util.GetRunFuncName(), fmt.Sprintf("ruaruaruauraura333333333333333"))
+	fmt.Sprintf("ruaruaruauraura333333333333333")
 	logrus.Infof("ruaruaruauraura333333333333333")
 	images, err := c.cclient.GetImage(c.Ctx, config.Image)
+	util.Errorf("11111111", util.GetRunFuncName(), fmt.Sprintf("ruaruaruauraura44444444444444"))
+	fmt.Sprintf("ruaruaruauraura44444444444444")
 	logrus.Infof("ruaruaruauraura44444444444444")
 	if err != nil {
 		return "", "", fmt.Errorf(spec.ImagePullFailed.Sprintf(config.Image, fmt.Sprintf("Get image failed, %s", err.Error()))), spec.ImagePullFailed.Code
