@@ -21,6 +21,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"google.golang.org/grpc"
 	"io"
 	"os"
 	"os/exec"
@@ -90,7 +91,10 @@ func NewClient(endpoint, namespace string) (*Client, error) {
 	if namespace == "" {
 		namespace = DefaultContainerdNS
 	}
-	cclient, err := containerd.New(endpoint, containerd.WithDefaultNamespace(namespace))
+	gopts := []grpc.DialOption{
+		grpc.WithInsecure(),
+	}
+	cclient, err := containerd.New(endpoint, containerd.WithDefaultNamespace(namespace), containerd.WithDialOpts(gopts))
 	if err != nil {
 		return nil, err
 	}
