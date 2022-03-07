@@ -47,7 +47,7 @@ import (
 	"github.com/opencontainers/runtime-spec/specs-go"
 	"github.com/sirupsen/logrus"
 
-	"github.com/chaosblade-io/chaosblade-exec-cri/exec/container"
+	"github.com/lyr885/chaosblade-exec-cri/exec/container"
 )
 
 const (

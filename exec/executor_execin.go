@@ -27,7 +27,7 @@ import (
 	"github.com/chaosblade-io/chaosblade-spec-go/spec"
 	"github.com/chaosblade-io/chaosblade-spec-go/util"
 
-	"github.com/chaosblade-io/chaosblade-exec-cri/version"
+	"github.com/lyr885/chaosblade-exec-cri/version"
 )
 
 var defaultBladeTarFilePath = fmt.Sprintf("/opt/chaosblade-%s.tar.gz", version.BladeVersion)

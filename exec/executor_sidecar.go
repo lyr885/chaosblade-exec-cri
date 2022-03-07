@@ -28,7 +28,7 @@ import (
 
 	"github.com/chaosblade-io/chaosblade-spec-go/spec"
 
-	execContainer "github.com/chaosblade-io/chaosblade-exec-cri/exec/container"
+	execContainer "github.com/lyr885/chaosblade-exec-cri/exec/container"
 )
 
 type RunInSidecarContainerExecutor struct {

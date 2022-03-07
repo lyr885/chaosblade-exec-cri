@@ -24,7 +24,7 @@ import (
 	"github.com/chaosblade-io/chaosblade-spec-go/util"
 	"github.com/sirupsen/logrus"
 
-	"github.com/chaosblade-io/chaosblade-exec-cri/version"
+	"github.com/lyr885/chaosblade-exec-cri/version"
 )
 
 var JvmSpecFileForYaml = ""

@@ -24,9 +24,9 @@ import (
 	"github.com/chaosblade-io/chaosblade-spec-go/spec"
 	"github.com/chaosblade-io/chaosblade-spec-go/util"
 
-	"github.com/chaosblade-io/chaosblade-exec-cri/exec/container"
-	"github.com/chaosblade-io/chaosblade-exec-cri/exec/container/containerd"
-	"github.com/chaosblade-io/chaosblade-exec-cri/exec/container/docker"
+	"github.com/lyr885/chaosblade-exec-cri/exec/container"
+	"github.com/lyr885/chaosblade-exec-cri/exec/container/containerd"
+	"github.com/lyr885/chaosblade-exec-cri/exec/container/docker"
 )
 
 const DstChaosBladeDir = "/opt"
